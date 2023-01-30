@@ -17,7 +17,6 @@ const app = (0, express_1.default)();
 exports.app = app;
 const server = (0, http_1.createServer)((req, res) => {
     myEmitter.emit("request", req, res);
-    myEmitter.emit("requests", req, res);
 });
 exports.server = server;
 app.use((0, cors_1.default)());

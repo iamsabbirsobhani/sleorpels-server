@@ -12,7 +12,6 @@ const app = express();
 
 const server = createServer((req, res) => {
   myEmitter.emit("request", req, res);
-  myEmitter.emit("requests", req, res);
 });
 
 // enable cors
