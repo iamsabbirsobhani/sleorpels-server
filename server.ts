@@ -1,3 +1,4 @@
+import { Request, Response } from "express";
 import express from "express";
 import { createServer } from "http";
 import { EventEmitter } from "node:events";
@@ -10,7 +11,7 @@ const myEmitter = new EventEmitter();
 
 const app = express();
 
-const server = createServer((req, res) => {
+const server = createServer((req: Request, res: Response) => {
   myEmitter.emit("request", req, res);
 });
 
