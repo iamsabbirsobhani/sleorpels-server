@@ -37,6 +37,8 @@ server.on("request", () => {
 // define the node event emitter
 customEvents(myEmitter);
 
+// call database configuration
+
 // define socket.io
 const io = realtime(server);
 
