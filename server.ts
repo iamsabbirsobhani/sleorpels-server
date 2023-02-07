@@ -1,9 +1,9 @@
-import { Request, Response } from "express";
+import { Request, Response, Router } from "express";
 import express from "express";
 import { createServer } from "http";
 import { EventEmitter } from "node:events";
 import { customEvents } from "./app/events/events";
-import { routes } from "./app/routes/routes";
+import { router } from "./app/routes/routes";
 import { realtime } from "./app/socket/socket";
 import cors from "cors";
 
@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // define the routes
-routes(app);
+app.use("/api", router);
 
 // register the express app as a handler to the http server
 // on request event

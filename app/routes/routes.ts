@@ -1,8 +1,11 @@
-import { Request, Response, Application } from "express";
+import { Request, Response, Application, Router } from "express";
 import { QueryResult } from "pg";
 import { GetProducts } from "../controller/products";
 import { db } from "../db";
 
-export const routes = (app: Application) => {
-  app.get("/", GetProducts);
-};
+// creating a router
+const router = Router();
+
+router.get("/", GetProducts);
+
+export { router };
