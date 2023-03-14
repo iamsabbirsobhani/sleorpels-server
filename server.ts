@@ -47,6 +47,3 @@ const PORT = 3000 || process.env.PORT;
 server.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT} 🚀 http://localhost:3000`);
 });
-
-// if needed, export the server, app, event emitter and socket.io
-export { server, app, myEmitter, io };
